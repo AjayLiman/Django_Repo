@@ -6,8 +6,37 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    body {
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        min-height: 100vh;
+    }
+    .login-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .btn-login {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+    }
+    .btn-login:hover {
+        background-color: #45a049;
+    }
+    .btn-reset {
+        background-color: #f39c12;
+        border: none;
+        color: white;
+    }
+    .btn-reset:hover {
+        background-color: #e67e22;
+    }
+</style>
+
 <div class="container mt-5 d-flex justify-content-center">
-    <div class="card shadow-lg p-4" style="max-width: 450px; width: 100%;">
+    <div class="login-card" style="max-width: 450px; width: 100%;">
         <h2 class="text-center text-primary mb-4">Login</h2>
         <form method="post" novalidate>
             {% csrf_token %}
@@ -15,10 +44,10 @@
 
             <div class="row mt-4">
                 <div class="col-6">
-                    <button type="submit" class="btn btn-success w-100">Login</button>
+                    <button type="submit" class="btn btn-login w-100">Login</button>
                 </div>
                 <div class="col-6">
-                    <button type="reset" class="btn btn-warning w-100">Reset</button>
+                    <button type="reset" class="btn btn-reset w-100">Reset</button>
                 </div>
             </div>
         </form>
